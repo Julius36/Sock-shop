@@ -42,8 +42,8 @@ jobs:
 
       - name: Update kubeconfig
         run: |
-         aws eks update-kubeconfig --region us-east-1 --name sockShop
-         kubectl config set-context --current --namespace=sock-shop
+         aws eks update-kubeconfig --region us-east-1 --name capstone-eks-1202
+         kubectl config set-context --current --namespace=capstone-eks
          kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1.5.3/cert-manager.crds.yaml
          kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.15.1/cert-manager.yaml
 
