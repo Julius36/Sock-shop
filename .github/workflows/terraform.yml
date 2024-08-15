@@ -56,6 +56,18 @@ jobs:
     - name: Update kubeconfig
       run: |
         aws eks update-kubeconfig --region us-east-1 --name capstone-eks-1202
-        kubectl create namespace sock-shop
+        
+        #!/bin/bash
+
+        NAMESPACE_NAME="sock-shop"
+
+       # Check if the namespace exists
+       if ! kubectl get namespace $NAMESPACE_NAME > /dev/null 2>&1; then
+       echo "Namespace $NAMESPACE_NAME does not exist. Creating..."
+       kubectl create namespace $NAMESPACE_NAME
+       else
+       echo "Namespace $NAMESPACE_NAME already exists."
+       fi
+
 
 
