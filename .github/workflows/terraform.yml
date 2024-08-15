@@ -49,8 +49,8 @@ jobs:
 
     - name: Create EKS cluster
       run: |
-        terraform -chdir=Sock-shop/ init
-        terraform -chdir=Sock-shopcd  apply --auto-approve
+        # terraform -chdir=C:\Users\HP 840\Documents\My_Codes\Terraform\Sock-shop\ init
+        terraform -chdir=Sock-shop apply --auto-approve
 
 
 
