@@ -47,6 +47,7 @@ jobs:
       uses: hashicorp/setup-terraform@v2
 
     - name: Create EKS cluster
+      if:   ${{vars.CREATE_EKS == 'true'}}
       run: |
         terraform -chdir=terraform/ init
         terraform -chdir=terraform apply --auto-approve
